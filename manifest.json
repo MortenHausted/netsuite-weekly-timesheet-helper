@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+ 
+  "name": "Netsuite - Hide Classification",
+  "version": "0.0.1",
+  "description": "Remove Classification",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.app.netsuite.com/*"],
+      "css": ["style.css"],
+      "all_frames":true
+    }
+  ]
+}
