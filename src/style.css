@@ -1,0 +1,67 @@
+div[data-walkthrough="FieldGroup:Classification"] {
+  display: none;
+}
+
+#app-body {
+  margin: 0 !important;
+  background: rgb(9, 9, 121);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(156, 238, 255, 1) 0%,
+    rgba(167, 167, 167, 1) 100%
+  );
+  border: 2px solid darkgrey;
+}
+
+#app-timesheet-helper {
+  width: 450px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-timesheet-helper div {
+  margin: 20px 0;
+}
+
+#inputContainer {
+  display: flex;
+  position: relative;
+}
+
+#balance {
+  margin: 0;
+}
+
+#maintenance-checkbox {
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  text-align: center;
+  border: 1px solid #6a6a6a;
+}
+
+/* Chrome, Safari, Edge, Opera */
+#app-timesheet-helper input::-webkit-outer-spin-button,
+#app-timesheet-helper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#app-timesheet-helper input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#generateBtn {
+  width: 50%;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
