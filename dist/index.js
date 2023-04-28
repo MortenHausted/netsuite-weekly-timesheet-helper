@@ -928,7 +928,6 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 (function () {
-    var workWeek = 37;
     var maintenanceHours = 0;
     var findTableTimeout = 0;
     var AJOUR_PROJECT = "PROJ075079 Eg Danmark A/S : IPP Ongoing Ajour";
@@ -947,6 +946,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
                 switch (_a.label) {
                     case 0:
                         hoursArr = splitMaintenanceHours();
+                        if (!maintenanceHours)
+                            return [2];
                         length = obj.currentProjectRows.length;
                         maintenanceRow = obj.currentProjectRows[length - 1];
                         timeRow = obj.currentTimeRows[length - 1];
@@ -1173,15 +1174,11 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
     function markInputField(value) {
         maintenanceHours = value || 0;
-        if (!value) {
-            showError("Please use a number greater than 0");
-            return false;
-        }
-        else if (value <= 37) {
+        if (value <= 37) {
             showError("", true);
             return true;
         }
-        else {
+        else if (value > 37) {
             showError("Are you sure that you are a maintenance machine? Maintaining above 37 hours not allowed! 💩");
             return false;
         }
@@ -1234,7 +1231,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         divApp.append(btn);
         return divApp;
     }
-    if (location.href.includes("app.netsuite.com"))
+    if (location.href.includes("app.netsuite.com/app/accounting/transactions/time/weeklytime"))
         document.body.append(generatePopUp());
 })();
 

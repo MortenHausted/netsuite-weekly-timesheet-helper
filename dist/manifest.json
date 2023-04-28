@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Netsuite - Weekly Timesheet Helper",
   "version": "0.0.1",
-  "description": "Helps apply hours to Ajour Timesheets",
+  "description": "Helps apply hours to Weekly Timesheets",
   "permissions": ["activeTab", "scripting"],
   "icons": {
     "128": "assets/icon128.png"
