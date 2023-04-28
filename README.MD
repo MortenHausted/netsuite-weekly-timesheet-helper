@@ -11,3 +11,4 @@ Installation
 2. Enable `Developer mode`.
 3. Click `Load unpacked extension...`.
 4. Select the folder of this repository.
+5. go to dist folder and choose select
