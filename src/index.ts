@@ -7,7 +7,6 @@ interface RowObject {
 }
 
 (function () {
-    const workWeek = 37;
     let maintenanceHours = 0;
     let findTableTimeout = 0;
     const AJOUR_PROJECT = "PROJ075079 Eg Danmark A/S : IPP Ongoing Ajour";
@@ -27,6 +26,7 @@ interface RowObject {
 
     async function addMaintenanceRow(obj: RowObject) {
         const hoursArr = splitMaintenanceHours();
+        if(!maintenanceHours) return;
         const length = obj.currentProjectRows.length;
         const maintenanceRow = obj.currentProjectRows[length - 1];
         const timeRow = obj.currentTimeRows[length - 1];
@@ -184,13 +184,10 @@ interface RowObject {
 
     function markInputField(value: number) {
         maintenanceHours = value || 0;
-        if (!value) {
-            showError("Please use a number greater than 0");
-            return false;
-        } else if (value <= 37) {
+        if (value <= 37) {
             showError("", true);
             return true;
-        } else {
+        } else if (value > 37) {
             showError("Are you sure that you are a maintenance machine? Maintaining above 37 hours not allowed! 💩");
             return false;
         }
