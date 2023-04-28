@@ -252,5 +252,5 @@ interface RowObject {
         return divApp;
     }
 
-    if (location.href.includes("app.netsuite.com")) document.body.append(generatePopUp());
+    if (location.href.includes("app.netsuite.com/app/accounting/transactions/time/weeklytime")) document.body.append(generatePopUp());
 })();
