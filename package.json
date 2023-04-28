@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MortenHausted/netsuite-Classification#readme",
   "devDependencies": {
+    "@types/chrome": "^0.0.233",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
