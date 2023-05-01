@@ -168,17 +168,20 @@ interface RowObject {
     }
 
     function splitMaintenanceHours() {
+        const maxHoursPerDay = 7.5;
+        const maxHoursPerWeek = 37.5;
+    
         let iterator = parseInt(maintenanceHours.toString());
         const arr = [0, 0, 0, 0, 0];
-        if (iterator > 37.5) return arr;
+        if (iterator > maxHoursPerWeek) return arr;
         let runCounter = 0;
         while (iterator > 0) {
         	  runCounter++;
             let hour = parseFloat((Math.round(Math.random() * 7)/2).toFixed(2));
             const index = Math.floor(Math.random() * 5);
             let dayHour = arr[index];
-            if (dayHour + hour > 7.5) {
-                hour = 7.5 - dayHour;
+            if (dayHour + hour >maxHoursPerDay) {
+                hour = maxHoursPerDay - dayHour;
 						}
             
             iterator -= hour;
