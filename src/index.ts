@@ -170,15 +170,27 @@ interface RowObject {
     function splitMaintenanceHours() {
         let iterator = parseInt(maintenanceHours.toString());
         const arr = [0, 0, 0, 0, 0];
-        while (input > 0) {
+        if (iterator > 37.5) return arr;
+        let runCounter = 0;
+        while (iterator > 0) {
+        	  runCounter++;
             let hour = parseFloat((Math.round(Math.random() * 7)/2).toFixed(2));
+            const index = Math.floor(Math.random() * 5);
+            let dayHour = arr[index];
+            if (dayHour + hour > 7.5) {
+                hour = 7.5 - dayHour;
+						}
+            
             iterator -= hour;
             if (iterator < 0) {
                 hour = hour+iterator;
             }
     
-            const index = Math.floor(Math.random() * 5);
-            arr[index] = parseFloat(arr[index]) + hour;
+            arr[index] = parseFloat(arr[index]) + hour;       
+            
+            if (runCounter > 1000) {
+                return;
+            }
         }
         return arr;
     }
